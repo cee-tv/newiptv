@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from klcis-iptv.webhop.me/iptv.html by HTTrack Website Copier/3.x [XR&CO'2017], Sun, 07 Jul 2024 07:38:21 GMT -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script disable-devtool-auto src='../external.html?link=https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+  <title>KLCiS - Philippines IPTV Streaming</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      background-color: #263238;
+    }
+    #player-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+    #video {
+      width: 100%;
+      height: 100%;
+    }
+    #channels-menu {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+      z-index: 1;
+      display: none;
+      max-height: calc(100vh - 20px);
+      overflow-y: auto;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+    }
+    #channels-menu.show {
+      display: block;
+      opacity: 1;
+    }
+    #channels-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    #channels-menu li {
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    #channels-menu li:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    #channels-menu li.active {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    .channel-logo {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+    .channel-name {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    #menu-btn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 2;
+      cursor: pointer;
+      font-size: 25px;
+      color: #FFFFFF;
+    }
+    #quality-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      z-index: 2;
+      cursor: pointer;
+      font-size: 25px;
+      color: #FFFFFF;
+    }
+    #quality-menu {
+      position: absolute;
+      top: 50px;
+      right: 10px;
+      background-color: rgba(255, 255, 255, 0.3);
+      padding: 10px;
+      border-radius: 5px;
+      z-index: 2;
+      display: none;
+	  cursor: pointer;
+    }
+    #quality-menu.show {
+      display: block;
+    }
+    #info-text {
+      position: absolute;
+      bottom: 35%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      z-index: 3;
+      display: none;
+	  text-align: center;
+    }
+  </style>
+  <script src="../external.html?link=https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+  
+	<script async src="../external.html?link=https://www.googletagmanager.com/gtag/js?id=G-L60NJPXKGV"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-L60NJPXKGV');
+	</script>
+
+</head>
+<body>
+  <div id="player-container">
+<div id="player-container">
+    <video id="video" controls="" src="blob:http://klcis-iptv.webhop.me/1d3aadbf-1b6a-4ea1-874e-debe521be074"></video>
+    <div id="channels-menu" class="">
+      <ul id="channels-list"><li class=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/TV5_%28Philippines%29_logo.svg/1024px-TV5_%28Philippines%29_logo.svg.png" alt="TV5 HD logo" class="channel-logo"><span class="channel-name" data-url="https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/tv5_qp.m3u8">TV5 HD</span></li><li><img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/TeleRadyo_Serbisyo_logo.svg/1200px-TeleRadyo_Serbisyo_logo.svg.png" alt="TeleRadyo Serbisyo logo" class="channel-logo"><span class="channel-name" data-url="https://teleradyo-abscbn-ono.amagi.tv/playlist720_p.m3u8">TeleRadyo Serbisyo</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/OneSportsPlus_logo.svg/200px-OneSportsPlus_logo.svg.png" alt="OneSports+ logo" class="channel-logo"><span class="channel-name" data-url="https://qp-pldt-live-grp-03-prod.akamaized.net/out/u/onesportsplushd_qp.m3u8">OneSports+</span></li><li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu1iwFhBT8ANLSreOSR73fAN4gNU1x2p0-LQ&amp;s" alt="NBA TV logo" class="channel-logo"><span class="channel-name" data-url="https://livecdn-iptv001.rumsport.com/stream/762/tracks-v1a1/mono.m3u8">NBA TV</span></li><li><img src="https://1000logos.net/wp-content/uploads/2021/04/CNN-logo.png" alt="CNN logo" class="channel-logo"><span class="channel-name" data-url="https://cnn-cnninternational-1-eu.rakuten.wurl.tv/f93b9a949a4a8651dd5a2f42e3a2b6f9.m3u8">CNN</span></li><li><img src="https://upload.wikimedia.org/wikipedia/en/b/ba/CLTV-36_Logo.jpeg" alt="CLTV 36 logo" class="channel-logo"><span class="channel-name" data-url="https://live.cltv36.tv:5443/LiveApp/streams/live.m3u8">CLTV 36</span></li><li class="active"><img src="https://static.wikia.nocookie.net/russel/images/f/f2/Cine_Mo%21_3D_Logo_2011.png" alt="CINEMO! logo" class="channel-logo"><span class="channel-name" data-url="https://cinemo-abscbn-ono.amagi.tv/playlist.m3u8">CINEMO!</span></li><li><img src="https://static.wikia.nocookie.net/tvfanon6528/images/d/d2/Cinema_One_%282013-.n.v.%29.png" alt="Cinema One logo" class="channel-logo"><span class="channel-name" data-url="https://cinemaone-abscbn-ono.amagi.tv/index.m3u8">Cinema One</span></li><li><img src="https://assets-myxglobal.abs-cbn.com/wp-content/uploads/2022/07/MYX_New_Logo_Web1.png" alt="MYX logo" class="channel-logo"><span class="channel-name" data-url="https://myxnola-abscbn-ono.amagi.tv/index.m3u8">MYX</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/INCTV_Logo_With_Shadow.webp/800px-INCTV_Logo_With_Shadow.webp.png" alt="INCTV logo" class="channel-logo"><span class="channel-name" data-url="https://199211.global.ssl.fastly.net/643cc12aa824db4374021c8c/live_95f6ac80dd6511ed9d08b12be56ae55e/index.m3u8">INCTV</span></li><li><img src="https://img.mytfc.com/cmsroot/abscms/media/mytfctv/channels/anc/anc-logo.png" alt="ANC logo" class="channel-logo"><span class="channel-name" data-url="https://ancglobal-abscbn-ono.amagi.tv/playlist.m3u8">ANC</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/2018_Travel_Channel_logo.svg/1200px-2018_Travel_Channel_logo.svg.png" alt="Travel Channel logo" class="channel-logo"><span class="channel-name" data-url="https://dplus.gammacdn.workers.dev/videos/110.m3u8">Travel Channel</span></li><li><img src="https://logonoid.com/images/hgtv-logo.png" alt="HGTV logo" class="channel-logo"><span class="channel-name" data-url="https://dplus.gammacdn.workers.dev/videos/111.m3u8">HGTV</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Food_Network_logo.svg/1200px-Food_Network_logo.svg.png" alt="Food Network logo" class="channel-logo"><span class="channel-name" data-url="https://dplus.gammacdn.workers.dev/videos/112.m3u8">Food Network</span></li><li><img src="https://i.postimg.cc/htVMBj9s/Cartoonito-logo-2021-alternate.png" alt="Cartoonito HD logo" class="channel-logo"><span class="channel-name" data-url="https://cdn1.skygo.mn/live/disk1/Boomerang/HLS-FTA/Boomerang.m3u8">Cartoonito HD</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Nick_Jr._logo_2023_%28outline%29.svg" alt="Nick Jr. logo" class="channel-logo"><span class="channel-name" data-url="http://212.102.60.231/NICK_JR/index.m3u8">Nick Jr.</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Arirang_logo.png/1200px-Arirang_logo.png" alt="Arirang logo" class="channel-logo"><span class="channel-name" data-url="https://amdlive-ch03-ctnd-com.akamaized.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8">Arirang</span></li><li><img src="https://i.postimg.cc/s2XcZJk6/cn.png" alt="Cartoon Network logo" class="channel-logo"><span class="channel-name" data-url="https://cdn1.skygo.mn/live/disk1/Cartoon_Network/HLS-FTA/Cartoon_Network.m3u8">Cartoon Network</span></li><li><img src="https://i.postimg.cc/sXW5pHwc/aj.png" alt="Aljazeera.ph logo" class="channel-logo"><span class="channel-name" data-url="https://live-hls-web-aje.getaj.net/AJE/index.m3u8">Aljazeera.ph</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/KBS_World_%282009%29.svg/2560px-KBS_World_%282009%29.svg.png" alt="KBS logo" class="channel-logo"><span class="channel-name" data-url="https://kbsworld-ott.akamaized.net/hls/live/2002341/kbsworld/master.m3u8">KBS</span></li><li><img src="https://i.postimg.cc/8c0DNwg2/tv5monde.png" alt="TV5 MONDE Asie logo" class="channel-logo"><span class="channel-name" data-url="https://ott.tv5monde.com/Content/HLS/Live/channel(seasie)/variant.m3u8">TV5 MONDE Asie</span></li><li><img src="https://i.postimg.cc/Ls57t52j/TV5-Monde-Style-2023.png" alt="TV5 MONDE Style logo" class="channel-logo"><span class="channel-name" data-url="https://ott.tv5monde.com/Content/HLS/Live/channel(style1)/variant.m3u8">TV5 MONDE Style</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/NHK_World-Japan_TV.svg/1280px-NHK_World-Japan_TV.svg.png" alt="NHK World Japan logo" class="channel-logo"><span class="channel-name" data-url="https://nhkwlive-ojp.akamaized.net/hls/live/2003459/nhkwlive-ojp-en/index.m3u8">NHK World Japan</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/New_Bloomberg_Logo.svg/1024px-New_Bloomberg_Logo.svg.png" alt="Bloomberg logo" class="channel-logo"><span class="channel-name" data-url="https://www.bloomberg.com/media-manifest/streams/asia.m3u8">Bloomberg</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/BBC_World_News_2022.svg/2560px-BBC_World_News_2022.svg.png" alt="BBC World News logo" class="channel-logo"><span class="channel-name" data-url="https://vs-hls-push-ww-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_news_channel_hd/t=3840/v=pv14/b=5070016/main.m3u8">BBC World News</span></li><li><img src="https://i.postimg.cc/DznVVRbW/dcnrfjn-4763cb55-6830-4ec4-b6de-81491c0b160f.png" alt="AXN logo" class="channel-logo"><span class="channel-name" data-url="http://170.254.18.106/AXN/index.m3u8">AXN</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Cinemax_%28Yellow%29.svg/1280px-Cinemax_%28Yellow%29.svg.png" alt="CINEMAX logo" class="channel-logo"><span class="channel-name" data-url="http://170.254.18.106/CINEMAX/index.m3u8">CINEMAX</span></li><li><img src="https://www.asiancrush.com/images/asiancrush/asiancrush_logo_image.png" alt="Asian Crush logo" class="channel-logo"><span class="channel-name" data-url="https://amg01201-cinedigmenterta-asiancrush-cineverse-x701o.amagi.tv/playlist/amg01201-cinedigmenterta-asiancrush-cineverse/playlist.m3u8">Asian Crush</span></li><li><img src="https://cdn.freebiesupply.com/logos/large/2x/amc-logo-black-and-white.png" alt="AMC logo" class="channel-logo"><span class="channel-name" data-url="https://5def33c73f084e11a19ca77697d6b413.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/Plex_AMCPresents/playlist.m3u8">AMC</span></li><li><img src="https://i.postimg.cc/qvnLcRqn/HBO-Family.png" alt="HBO Family logo" class="channel-logo"><span class="channel-name" data-url="http://170.254.18.106/HBO_FAMILY/tracks-v1a1/mono.m3u8">HBO Family</span></li><li><img src="https://i.postimg.cc/TYZQ6STM/8047802smbenknl54d1qi40m9m-320b8e1b7abb5c846e89cb9ad3ca8e39.png" alt="HBO Signature logo" class="channel-logo"><span class="channel-name" data-url="https://z88.ubtvfans.com/live/rx3/2824/7c499709e04993dcdb601df47291e152/index.m3u">HBO Signature</span></li><li><img src="https://i.postimg.cc/mrfmK9J8/hbo.png" alt="HBO Plus logo" class="channel-logo"><span class="channel-name" data-url="http://170.254.18.106/HBO_PLUS/index.m3u8">HBO Plus</span></li><li><img src="https://i.postimg.cc/XvW8ZCZs/Daco-4997049.png" alt="HBO HD logo" class="channel-logo"><span class="channel-name" data-url="https://z88.ubtvfans.com/live/rx1/332/e5efbdc49c26d46e0559df52a8a03d19/index.m3u8">HBO HD</span></li><li><img src="https://ia804502.us.archive.org/33/items/logo.brootv_hbo/HBO_2.png" alt="HBO 2 logo" class="channel-logo"><span class="channel-name" data-url="http://170.254.18.106/HBO2/index.m3u8">HBO 2</span></li><li><img src="https://i.postimg.cc/ydQXrpLG/hboxtreme.png" alt="HBO Xtreme logo" class="channel-logo"><span class="channel-name" data-url="http://170.254.18.106/HBO_XTREME/index.m3u8">HBO Xtreme</span></li><li><img src="https://upload.wikimedia.org/wikipedia/en/f/fc/HBOHits-ASIA.png" alt="HBO Hits logo" class="channel-logo"><span class="channel-name" data-url="https://z88.ubtvfans.com/live/rx1/330/c990900a99eee375a426b8200e7f150f/index.m3u8">HBO Hits</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/CGTN.svg/2560px-CGTN.svg.png" alt="CGTN News logo" class="channel-logo"><span class="channel-name" data-url="https://news.cgtn.com/resource/live/english/cgtn-news.m3u8">CGTN News</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/CGTN.svg/2560px-CGTN.svg.png" alt="CGTN Documentaries logo" class="channel-logo"><span class="channel-name" data-url="https://news.cgtn.com/resource/live/document/cgtn-doc.m3u8">CGTN Documentaries</span></li><li><img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/65/FRANCE_24_logo.svg/1200px-FRANCE_24_logo.svg.png" alt="France24.ph logo" class="channel-logo"><span class="channel-name" data-url="https://cdn.klowdtv.net/803B48A/n1.klowdtv.net/live2/france24_720p/playlist.m3u8">France24.ph</span></li><li><img src="https://cms.cignal.tv/Upload/Thumbnails/mo-macau-lotus-tv-3757.png" alt="Lotusmacau.Prd.ph logo" class="channel-logo"><span class="channel-name" data-url="https://cdn1.skygo.mn/live/disk1/Lotus/HLS-FTA/Lotus.m3u8">Lotusmacau.Prd.ph</span></li><li><img src="https://cms.cignal.tv/Upload/Thumbnails/Outdoor-Channel-Thumbnail.png" alt="Outdoor Channel logo" class="channel-logo"><span class="channel-name" data-url="https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg00718-outdoorchannela-outdoortvnz-samsungnz/playlist.m3u8">Outdoor Channel</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Paramount_Network_%28Blue%29_Logo.png" alt="Paramount Network logo" class="channel-logo"><span class="channel-name" data-url="http://170.254.18.106/PARAMOUNT/index.m3u8">Paramount Network</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2019_Discovery_logo.svg/2560px-2019_Discovery_logo.svg.png" alt="Discovery HD logo" class="channel-logo"><span class="channel-name" data-url="https://corsproxy.io/?https://varun-iptv.netlify.app/m3u/discoveryenglish.m3u8">Discovery HD</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Discovery_Science_-_Logo_2012.svg/1280px-Discovery_Science_-_Logo_2012.svg.png" alt="Discovery Science logo" class="channel-logo"><span class="channel-name" data-url="https://dplus.gammacdn.workers.dev/videos/96.m3u8">Discovery Science</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/TLC_Logo.svg/2560px-TLC_Logo.svg.png" alt="TLC logo" class="channel-logo"><span class="channel-name" data-url="https://dplus.gammacdn.workers.dev/videos/97.m3u8">TLC</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Discovery_Turbo.png/640px-Discovery_Turbo.png" alt="Discovery Turbo logo" class="channel-logo"><span class="channel-name" data-url="https://dplus.gammacdn.workers.dev/videos/98.m3u8">Discovery Turbo</span></li><li><img src="https://www.nicepng.com/png/full/831-8310067_bindi-the-otters-new-animal-planet-logo.png" alt="Animal Planet logo" class="channel-logo"><span class="channel-name" data-url="https://corsproxy.io/?https://dplus.gammacdn.workers.dev/videos/99.m3u8">Animal Planet</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/ID_INVESTIGATION_DISCOVERY.png/538px-ID_INVESTIGATION_DISCOVERY.png" alt="Investigation Discovery logo" class="channel-logo"><span class="channel-name" data-url="https://corsproxy.io/?https://varun-iptv.netlify.app/m3u/Investigation_Discovery.m3u8">Investigation Discovery</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Dmax_tv-channel.png" alt="DMAX logo" class="channel-logo"><span class="channel-name" data-url="https://dplus.gammacdn.workers.dev/videos/109.m3u8">DMAX</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Baywatch-logo.svg/1280px-Baywatch-logo.svg.png" alt="Baywatch logo" class="channel-logo"><span class="channel-name" data-url="https://d1ku2wsea2oun8.cloudfront.net/playlist.m3u8">Baywatch</span></li><li><img src="https://static.wikia.nocookie.net/logopedia/images/b/b5/XTRA_2.png" alt="Bein Sports Xtra logo" class="channel-logo"><span class="channel-name" data-url="https://amg01334-beinsportsllc-beinxtra-localnow-kcy6r.amagi.tv/playlist.m3u8">Bein Sports Xtra</span></li><li><img src="https://wildplanetfoods.com/cdn/shop/files/wild-planet-logo-200px.png" alt="Wild Planet logo" class="channel-logo"><span class="channel-name" data-url="https://d3c7duantorcb1.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-jpfvel38m2ce0-prod/amgwildplanetuk/playlist.m3u8">Wild Planet</span></li><li><img src="https://provider-static.plex.tv/6/epg/channels/logos/gracenote/6e7af423114c9f735d17e142783f233a.png" alt="Thrillers logo" class="channel-logo"><span class="channel-name" data-url="https://amc-rushbyamc-1-us.vizio.wurl.tv/playlist.m3u8">Thrillers</span></li><li><img src="https://static.wikia.nocookie.net/bbc/images/a/aa/BBC_Food_%28Pluto_TV%29.png" alt="BBC Food logo" class="channel-logo"><span class="channel-name" data-url="https://d386m2lmbakvx4.cloudfront.net/playlist.m3u8">BBC Food</span></li><li><img src="https://seeklogo.com/images/A/american-pickers-logo-A03D6DF65E-seeklogo.com.png" alt="Pickers logo" class="channel-logo"><span class="channel-name" data-url="https://d2fmvezvf9jfft.cloudfront.net/playlist.m3u8">Pickers</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/America%27s_Got_Talent_2015_logo.png/1200px-America%27s_Got_Talent_2015_logo.png" alt="America's Got Talent logo" class="channel-logo"><span class="channel-name" data-url="https://dhkq1p9audihq.cloudfront.net/index.m3u8">America's Got Talent</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/American_Idol_logo.svg/1280px-American_Idol_logo.svg.png" alt="American Idol logo" class="channel-logo"><span class="channel-name" data-url="https://d2h3esqi6ab3e7.cloudfront.net/index.m3u8">American Idol</span></li><li><img src="https://asset.brandfetch.io/idEdVdcbxd/idchi5xM0w.png" alt="AFV logo" class="channel-logo"><span class="channel-name" data-url="https://linear-12.frequency.stream/dist/plex/12/hls/master/playlist.m3u8">AFV</span></li><li><img src="https://www.besteverchannels.com/uploads/1/2/4/4/124460795/action-logo-1920x1080_orig.png" alt="Action!!! logo" class="channel-logo"><span class="channel-name" data-url="https://bec-action-1-us.tcl.wurl.tv/playlist.m3u8">Action!!!</span></li><li><img src="https://provider-static.plex.tv/epg/images/thumbnails/24hrfreemovies_artwork_vertical.jpg" alt="24 Hour Free Movies logo" class="channel-logo"><span class="channel-name" data-url="https://d1b5mlajbmvkjv.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/UDU-DistroTV/145.m3u8">24 Hour Free Movies</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Redbox_logo_2017.svg/2560px-Redbox_logo_2017.svg.png" alt="Redbox Spotlight logo" class="channel-logo"><span class="channel-name" data-url="https://spotlight-redbox.amagi.tv/playlist.m3u8">Redbox Spotlight</span></li><li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Redbox_logo_2017.svg/2560px-Redbox_logo_2017.svg.png" alt="Redbox Comedy logo" class="channel-logo"><span class="channel-name" data-url="https://comedy-redbox.amagi.tv/playlist.m3u8">Redbox Comedy</span></li><li><img src="https://images-1.rakuten.tv/storage/global-live-channel/translation/artwork/72720827-544c-4599-bf8e-ade66d6bc9be-top-movies-rakutentv-1621956630.png" alt="Rakuten TV (Top Free) logo" class="channel-logo"><span class="channel-name" data-url="https://rakuten-topfree-1-eu.rakuten.wurl.tv/2000.m3u8">Rakuten TV (Top Free)</span></li><li><img src="https://images-0.rakuten.tv/storage/global-live-channel/translation/artwork-negative/32045cf9-3031-4b1e-bb31-dc1447274b2e.png" alt="Rakuten TV (Family) logo" class="channel-logo"><span class="channel-name" data-url="https://rakuten-family-1-eu.rakuten.wurl.tv/2000.m3u8">Rakuten TV (Family)</span></li><li><img src="https://images-0.rakuten.tv/storage/global-live-channel/translation/artwork_negative/0511ea59-1994-43e7-805b-f1e40b5ddb91-action-movies-rakuten-tv-1646655463.png" alt="Rakuten TV (Action Movies) logo" class="channel-logo"><span class="channel-name" data-url="https://rakuten-actionmovies-1-eu.rakuten.wurl.tv/2000.m3u8">Rakuten TV (Action Movies)</span></li><li><img src="https://10play.com.au/ip/s3/2022/12/05/f67e539ee7ca067d20f1d406a196abd8-1202911.png" alt="MovieSphere logo" class="channel-logo"><span class="channel-name" data-url="https://moviesphereuk-samsunguk.amagi.tv/playlist.m3u8">MovieSphere</span></li><li><img src="https://static.wikia.nocookie.net/logopedia/images/1/1c/Sony_Movies_2019_%28Print%29.png" alt="SONY Movies logo" class="channel-logo"><span class="channel-name" data-url="https://cdn.klowdtv.net/803B48A/n1.klowdtv.net/live1/smc_720p/playlist.m3u8">SONY Movies</span></li><li><img src="https://i.ibb.co/7jPG9d8/421974055-7425184840922119-2393535146278253515-n.jpg" alt="Dreamstar TV logo" class="channel-logo"><span class="channel-name" data-url="https://ssh101-fl.bozztv.com/ssh101/dreamstartvnew/index.m3u8">Dreamstar TV</span></li><li><img src="https://i.imgur.com/MMccHNd.png" alt="PTV News (IPTV Player Only) logo" class="channel-logo"><span class="channel-name" data-url="https://ythls.armelin.one/channel/UCJCUbMaY593_4SN1QPG7NFQ.m3u8">PTV News (IPTV Player Only)</span></li><li><img src="https://i.imgur.com/qe1QqZh.png" alt="DZRH News (IPTV Player Only) logo" class="channel-logo"><span class="channel-name" data-url="https://ythls.armelin.one/channel/UCcTiBX8js_djhSSlmJRI99A.m3u8">DZRH News (IPTV Player Only)</span></li><li><img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Kapamilya_Channel_Logo_2020.svg/2560px-Kapamilya_Channel_Logo_2020.svg.png" alt="Kapamilya Channel (IPTV Player Only) logo" class="channel-logo"><span class="channel-name" data-url="https://jeromelaliag.link/iptv/abscbnentertainment.php">Kapamilya Channel (IPTV Player Only)</span></li><li><img src="https://cdn.manilastandard.net/wp-content/uploads/2023/11/Kapuso-Stream-1.jpg" alt="GMA (IPTV Player Only) log
+    <video id="video" controls></video>
+    <div id="channels-menu">
+      <ul id="channels-list"></ul>
+<li><img src="https://cdn.manilastandard.net/wp-content/uploads/2023/11/Kapuso-Stream-1.jpg" alt="GMA (IPTV Player Only) logo" class="channel-logo"><span class="channel-name" data-url="https://ythls.armelin.one/channel/UCKL5hAuzgFQsyrsQKgU0Qng.m3u8">GMA (IPTV Player Only)</span></li>
+    </div>
+    <div id="quality-menu"></div>
+    <div id="menu-btn">&#9776;</div>
+    <div id="quality-btn">&#9881;</div>
+    <div id="info-text">KLCiS is loading the Live Stream. Please wait...<br> WARNING: NOT FOR SALE!!!</div>
+ </ul>
+</div>
+
+
+
+  </script>
+</body
+<!-- Mirrored from klcis-iptv.webhop.me/iptv.html by HTTrack Website Copier/3.x [XR&CO'2017], Sun, 07 Jul 2024 07:38:21 GMT -->
+</html>
